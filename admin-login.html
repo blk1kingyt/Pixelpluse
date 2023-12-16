@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(to right, #f4a261, #2a9d8f);
+            transition: background 0.5s ease;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+
+        #adminForm {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        input {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 16px;
+            background: linear-gradient(to right, #e76f51, #457b9d);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #f67280, #6c757d);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div id="adminForm">
+    <h2>Admin Login</h2>
+    <label for="adminEmail">Email:</label>
+    <br>
+    <input type="text" id="adminEmail" placeholder="Enter Email">
+    <br>
+    <label for="adminAccessKey">Access Key:</label>
+    <br>
+    <input type="password" id="adminAccessKey" placeholder="Enter Access Key">
+    <br>
+    <button onclick="validateAdminLogin()">Login</button>
+</div>
+
+<script>
+    function validateAdminLogin() {
+        var adminAccessKey = document.getElementById("adminAccessKey").value;
+        var adminEmail = document.getElementById("adminEmail").value.toLowerCase();
+
+        if (adminAccessKey === "8492" && adminEmail.endsWith(".com")) {
+            displayGeneratedKey();
+        } else {
+            alert("Invalid admin access credentials.");
+        }
+    }
+
+    function displayGeneratedKey() {
+        var keys = ["blk3", "xdx3", "bm3", "rm4", "jm6"];
+        var generatedKey = keys[Math.floor(Math.random() * keys.length)];
+
+        alert("Generated Key: " + generatedKey);
+    }
+</script>
+
+</body>
+</html>
